@@ -13,10 +13,34 @@
           exact
         >
           <v-list-item-action>
-            <v-icon>mdi-home</v-icon>
+            <v-icon>mdi-newspaper</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Home</v-list-item-title>
+            <v-list-item-title>Headlines</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item
+          to="/business"
+          router
+          exact
+        >
+          <v-list-item-action>
+            <v-icon>mdi-office-building</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Business News</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item
+          to="/technology"
+          router
+          exact
+        >
+          <v-list-item-action>
+            <v-icon>mdi-robot-happy-outline</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Technology</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
