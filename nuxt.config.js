@@ -25,14 +25,13 @@ export default {
   head: {
     titleTemplate: '%s - Fresh News',
     title: 'Fresh News | The breaking news just for you!',
-    description: 'Get the freshest news from America. Fresh News will keep you posted 24 hours a day.',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'Get the freshest news from America. Fresh News will keep you posted 24 hours a day.' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
