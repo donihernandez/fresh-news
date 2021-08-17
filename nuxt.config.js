@@ -80,7 +80,7 @@ export default {
       dark: true,
       themes: {
         dark: {
-          primary: colors.purple,
+          primary: colors.indigo.lighten1,
           accent: colors.grey.darken2,
           secondary: colors.amber.darken2,
           info: colors.teal.lighten1,

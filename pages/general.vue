@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-row align="center" justify="center" class="mt-3 mb-3 mx-auto">
-      <h1>Business News</h1>
+      <h1>General News</h1>
     </v-row>
     <v-row class="mt-3 mb-3">
       <v-col
@@ -51,7 +51,7 @@ export default {
   },
   methods: {
     async getNews () {
-      const data = await this.$axios.$get(`/top-headlines?country=us&category=business&pageSize=${this.pageSize}&apiKey=${process.env.API_SECRET}`)
+      const data = await this.$axios.$get(`/top-headlines?country=us&category=general&pageSize=${this.pageSize}&apiKey=${process.env.API_SECRET}`)
       if (this.headlines !== data.articles) {
         this.headlines = data.articles
       }

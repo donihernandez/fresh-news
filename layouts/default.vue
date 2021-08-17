@@ -16,33 +16,29 @@
             <v-icon>mdi-newspaper</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Headlines</v-list-item-title>
+            <v-list-item-title>Top Headlines</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item
-          to="/business"
-          router
-          exact
+        <v-list-group
+          prepend-icon="mdi-newspaper-variant-multiple-outline"
         >
-          <v-list-item-action>
-            <v-icon>mdi-office-building</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Business News</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item
-          to="/technology"
-          router
-          exact
-        >
-          <v-list-item-action>
-            <v-icon>mdi-robot-happy-outline</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Technology</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+          <template #activator>
+            <v-list-item-title>Categories</v-list-item-title>
+          </template>
+
+          <v-list-item
+            v-for="([title, icon, url], i) in categories"
+            :key="i"
+            link
+            :to="url"
+          >
+            <v-list-item-title v-text="title" />
+
+            <v-list-item-icon>
+              <v-icon v-text="icon" />
+            </v-list-item-icon>
+          </v-list-item>
+        </v-list-group>
       </v-list>
     </v-navigation-drawer>
     <v-app-bar
@@ -82,15 +78,13 @@ export default {
     return {
       drawer: true,
       fixed: false,
-      admins: [
-        ['Management', 'mdi-account-multiple-outline'],
-        ['Settings', 'mdi-cog-outline']
-      ],
-      cruds: [
-        ['Create', 'mdi-plus-outline'],
-        ['Read', 'mdi-file-outline'],
-        ['Update', 'mdi-update'],
-        ['Delete', 'mdi-delete']
+      categories: [
+        ['General', 'mdi-newspaper-variant-multiple', '/general'],
+        ['Business', 'mdi-office-building', '/business'],
+        ['Technology', 'mdi-robot-happy-outline', '/technology'],
+        ['Health', 'mdi-hospital-building', '/health'],
+        ['Science', 'mdi-atom', '/science'],
+        ['Sports', 'mdi-shoe-cleat', '/sports']
       ],
       title: 'Fresh News'
     }
