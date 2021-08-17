@@ -1,6 +1,23 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
+  env: {
+    BASE_URL: 'https://newsapi.org/v2',
+    API_SECRET: 'eae672549b1649fe919f7a2d60df0118'
+  },
+  privateRuntimeConfig: {
+    axios: {
+      baseURL: process.env.BASE_URL
+    },
+    apiSecret: process.env.API_SECRET
+  },
+
+  publicRuntimeConfig: {
+    axios: {
+      baseURL: process.env.BASE_URL
+    }
+  },
+
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
@@ -24,6 +41,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/node_modules/@mdi/font/css/materialdesignicons.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -48,18 +66,23 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: 'https://newsapi.org/v2'
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
+    icons: {
+      iconfont: 'mdi' // default - only for display purposes
+    },
     customVariables: ['~/assets/variables.scss'],
     theme: {
       dark: true,
       themes: {
         dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
+          primary: colors.purple,
+          accent: colors.grey.darken2,
+          secondary: colors.amber.darken2,
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
