@@ -1,4 +1,5 @@
-# fresh-news
+# Fresh News
+Fresh News is a news portal dedicated exclusively to displaying the latest news from the United States.
 
 ## Build Setup
 

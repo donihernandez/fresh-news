@@ -43,16 +43,30 @@
         </v-card>
       </v-col>
     </v-row>
+    <v-row align="center" justify="center">
+      <v-btn color="primary" @click="getNews">
+        Refresh News
+      </v-btn>
+    </v-row>
   </v-container>
 </template>
 
 <script>
 export default {
-  async asyncData ({ $axios }) {
-    const headlines = await $axios.$get(`/top-headlines?country=us&apiKey=${process.env.API_SECRET}`)
-    console.log(headlines)
+  data () {
     return {
-      headlines: headlines.articles
+      headlines: []
+    }
+  },
+  async fetch () {
+    await this.getNews()
+  },
+  methods: {
+    async getNews () {
+      const data = await this.$axios.$get(`/top-headlines?country=us&apiKey=${process.env.API_SECRET}`)
+      if (this.headlines !== data.articles) {
+        this.headlines = data.articles
+      }
     }
   }
 }
