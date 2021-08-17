@@ -23,8 +23,9 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - fresh-news',
-    title: 'fresh-news',
+    titleTemplate: '%s - Fresh News',
+    title: 'Fresh News | The breaking news just for you!',
+    description: 'Get the freshest news from America. Fresh News will keep you posted 24 hours a day.',
     htmlAttrs: {
       lang: 'en'
     },
