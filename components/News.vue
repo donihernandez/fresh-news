@@ -37,7 +37,7 @@ export default {
   name: 'News',
   props: {
     headline: {
-      type: String,
+      type: Object,
       required: true
     }
   }

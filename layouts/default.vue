@@ -13,6 +13,18 @@
           exact
         >
           <v-list-item-action>
+            <v-icon>mdi-text-search</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Search News</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item
+          to="/headlines"
+          router
+          exact
+        >
+          <v-list-item-action>
             <v-icon>mdi-newspaper</v-icon>
           </v-list-item-action>
           <v-list-item-content>
@@ -52,6 +64,7 @@
       <v-avatar size="100">
         <v-img
           height="100%"
+          class="mx-auto"
           src="/Fresh_News_Logo.png"
           alt="Fresh_News_Logo"
         />
