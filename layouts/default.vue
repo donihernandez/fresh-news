@@ -13,22 +13,22 @@
           exact
         >
           <v-list-item-action>
-            <v-icon>mdi-text-search</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Search News</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item
-          to="/headlines"
-          router
-          exact
-        >
-          <v-list-item-action>
             <v-icon>mdi-newspaper</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>Top Headlines</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item
+          to="/search"
+          router
+          exact
+        >
+          <v-list-item-action>
+            <v-icon>mdi-text-search</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Search News</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-group
@@ -106,9 +106,9 @@ export default {
 </script>
 
 <style>
- footer {
-   display: flex;
-   justify-content: center;
-   align-items: center;
- }
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>
