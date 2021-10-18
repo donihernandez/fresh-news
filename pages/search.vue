@@ -12,12 +12,6 @@
           <v-text-field v-model="term" type="text" label="Search" placeholder="Search by term..." />
         </v-col>
         <v-col
-          lg="2"
-          cols="12"
-        >
-          <v-select v-model="sortedBy" label="Sort By" :items="sortList" />
-        </v-col>
-        <v-col
           cols="12"
           md="2"
         >
@@ -72,6 +66,14 @@
               @input="menu = false"
             />
           </v-menu>
+        </v-col>
+
+        <v-col
+          v-if="fromDate !== '' || toDate !== ''"
+          lg="2"
+          cols="12"
+        >
+          <v-select v-model="sortedBy" label="Sort By" :items="sortList" />
         </v-col>
         <v-col lg="1" cols="12" align="center" justify="center">
           <v-btn block type="submit" color="primary">
@@ -136,6 +138,12 @@ export default {
       if (this.term !== '') {
         url += `&q=${this.term}`
       }
+      if (this.fromDate !== '') {
+        url += `&from=${this.fromDate}`
+      }
+      if (this.toDate !== '') {
+        url += `&to=${this.toDate}`
+      }
       if (this.sortedBy !== '') {
         if (this.sortedBy === 'Popularity' || this.sortedBy === 'Relevancy') {
           this.sortedBy = this.sortedBy.toLowerCase()
@@ -144,14 +152,7 @@ export default {
         }
         url += `&sortBy=${this.sortedBy}`
       }
-      if (this.fromDate !== '') {
-        url += `&from=${this.fromDate}`
-      }
-      if (this.toDate !== '') {
-        url += `&to=${this.toDate}`
-      }
       url += `&apiKey=${process.env.API_SECRET}`
-
       console.log(url)
 
       const data = await this.$axios.$get(url)

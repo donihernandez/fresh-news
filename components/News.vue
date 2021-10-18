@@ -23,6 +23,7 @@
     <v-card-actions>
       <v-btn
         link
+        rel="noreferrer noopener"
         :href="headline.url"
         target="_blank"
       >

@@ -106,6 +106,10 @@ export default {
 </script>
 
 <style>
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
 footer {
   display: flex;
   justify-content: center;
