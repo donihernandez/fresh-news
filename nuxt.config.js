@@ -49,6 +49,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/fireinit.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -94,7 +95,7 @@ export default {
       dark: true,
       themes: {
         dark: {
-          primary: colors.indigo.lighten1,
+          primary: colors.indigo,
           accent: colors.grey.darken2,
           secondary: colors.amber.darken2,
           info: colors.teal.lighten1,

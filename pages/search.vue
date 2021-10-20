@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-row align="center" justify="center" class="mt-3 mb-3 mx-auto">
-      <h1>Search News</h1>
+      <h1 class="text-h1 font-weight-bold">Search News</h1>
     </v-row>
     <v-form @submit.prevent="search">
       <v-row align="center" justify="center" class="mt-3 mb-3 mx-auto">

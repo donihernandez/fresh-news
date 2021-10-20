@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-row align="center" justify="center" class="mt-3 mb-3 mx-auto">
-      <h1>Top Headlines</h1>
+      <h1 class="text-h1 font-weight-bold">Top Headlines</h1>
     </v-row>
     <v-row class="mt-3 mb-3">
       <v-col

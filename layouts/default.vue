@@ -71,6 +71,26 @@
       </v-avatar>
       <v-toolbar-title v-text="title" />
       <v-spacer />
+      <div v-if="user === null">
+        <v-btn elevation="0" class="ma-2 white--text" to="/register">
+          <v-icon left dark>
+            mdi-account-plus
+          </v-icon>
+          Register
+        </v-btn>
+        <v-btn elevation="0" class="ma-2 white--text" to="/login">
+          <v-icon left dark>
+            mdi-lock-open-variant
+          </v-icon>
+          Sign In
+        </v-btn>
+      </div>
+      <v-btn v-else elevation="0" class="ma-2 white--text" @click="logout">
+        <v-icon left dark>
+          mdi-exit-app
+        </v-icon>
+        Logout
+      </v-btn>
     </v-app-bar>
     <v-main>
       <v-container>
@@ -86,7 +106,9 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
+  middleware: 'auth',
   data () {
     return {
       drawer: true,
@@ -100,6 +122,16 @@ export default {
         ['Sports', 'mdi-shoe-cleat', '/sports']
       ],
       title: 'Fresh News'
+    }
+  },
+  computed: {
+    ...mapGetters([
+      'user'
+    ])
+  },
+  methods: {
+    logout () {
+      this.$store.dispatch('signOut').then(() => this.$router.push('/'))
     }
   }
 }
