@@ -1,7 +1,9 @@
 <template>
   <v-container fluid>
     <v-row align="center" justify="center" class="mt-3 mb-3 mx-auto">
-      <h1 class="text-h1 font-weight-bold">Top Headlines</h1>
+      <h1 class="text-h1 font-weight-bold">
+        Top Headlines
+      </h1>
     </v-row>
     <v-row class="mt-3 mb-3">
       <v-col
@@ -31,18 +33,20 @@
 
 <script>
 export default {
+  async asyncData ({ $axios }) {
+    const data = await $axios.$get(`/top-headlines?country=us&pageSize=${45}&apiKey=${process.env.API_SECRET}`)
+    return {
+      headlines: data.articles
+    }
+  },
   data () {
     return {
-      headlines: [],
       pagination: {
         page: 1,
         perPage: 15
       },
       pageSize: 45
     }
-  },
-  async fetch () {
-    await this.getNews()
   },
   computed: {
     paginatedNews () {
